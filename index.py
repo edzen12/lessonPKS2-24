@@ -1,8 +1,5 @@
 # Типы данных
-#     int 
-#     float   
-#     bool 
-#     str 
+#     int, float, bool,str 
 #     list []
 #     dict {}
 #     tuple ()
@@ -60,3 +57,8 @@ class Student:
 
 st = Student('Denis Denisov', 17, 'pks-2-24') # экземпляр
 print(st.info())
+
+def calc():
+    print('hello')
+
+calc()

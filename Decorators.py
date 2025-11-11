@@ -36,15 +36,7 @@ def operate(func, x):
 print(operate(inc, 6))
 print(operate(dec, 8))
 
-######
-def oute():
-    def inner():
-        print('Я функция внутри')
-    return inner 
-# oute - возвращает другую функцию
-newFunc = oute()
-newFunc()
-######
+###### 
 def before_after(func):
     def wrapper():
         print("Перед вызовом")

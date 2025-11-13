@@ -45,16 +45,27 @@ class Tour:
             'client': self._client, 
         }
 
-# 2. Класс Client
-# Атрибуты:
-# name — имя клиента;
-# balance — баланс клиента.
+class Client:
+    def __init__(self, name:str, balance:float):
+        self.name = name
+        self.balance = balance 
 
-# Методы:
-# pay(amount) — уменьшает баланс, если хватает денег;
-# add_balance(amount) — пополнение счёта;
-# info() — возвращает строку с именем и балансом.
-
+    def pay(self, amount): #уменьшает баланс, если хватает денег;
+        if amount <= 0 :
+            return False
+        if self.balance < amount:
+            return False
+        self.balance -= amount
+        return True
+    
+    def add_balance(self, amount):
+        if amount > 0:
+            self.balance += amount
+        else:
+            return False
+        
+    def info(self):
+        return f"Имя: {self.name} Баланс: {self.balance}сом"
 
 # 3. Класс Agency
 # Атрибуты:
@@ -68,3 +79,4 @@ class Tour:
 # book_tour(client, tour_id) — бронирует тур для клиента;
 # cancel_all_bookings() — отменяет все активные брони;
 # show_status() — показывает состояние всех туров и текущую выручку.
+
